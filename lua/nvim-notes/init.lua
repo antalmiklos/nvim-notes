@@ -8,6 +8,7 @@ local M = {}
 -- Routes calls made to this module to functions in the
 -- plugin's other modules.
 M.open_float = window.open_float
+M.close_float = window.close_float
 
 function M.setup(opts)
   if opts == nil then
