@@ -24,5 +24,13 @@ vim.api.nvim_create_user_command(
     {bang = true, desc = 'a new command to do the thing'}
 )
 
+vim.api.nvim_create_user_command(
+    'CloseTheThing',
+    function()
+        M.close_float()
+    end,
+    {bang = true, desc = 'a new command to do the thing'}
+)
+
 return M
 
