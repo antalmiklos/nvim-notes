@@ -15,16 +15,14 @@ local function create_buf(name)
   vim.api.nvim_buf_set_name(M.buffer, name)
 end
 
-
-
 function M.open_float()
   local width = 60;
   local height = 20;
   local zindex = 99;
   local dim = get_win_dimensions()
 
-  local col = dim.width - width / 2
-  local row = dim.height - height / 2
+  local col = (dim.width - width) / 2
+  local row = (dim.height - height) / 2
 
   if M.buffer == nil then
     create_buf("notes")
