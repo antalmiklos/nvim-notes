@@ -25,6 +25,5 @@ vim.api.nvim_create_user_command(
     {bang = true, desc = 'a new command to do the thing'}
 )
 
-require("nvim-notes")
 return M
 
