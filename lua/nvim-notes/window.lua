@@ -6,7 +6,7 @@ local function create_buf(name)
     name = "notes"
   end
   M.buffer = vim.api.nvim_create_buf(false, true)
-  vim.api.nvim_buf_set_name(name)
+  vim.api.nvim_buf_set_name(M.buffer, name)
 end
 
 
