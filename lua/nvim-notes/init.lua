@@ -9,6 +9,13 @@ local M = {}
 -- plugin's other modules.
 M.open_float = window.open_float
 
+function M.setup(opts)
+  if opts == nil then
+    return
+  end
+  return
+end
+
 vim.api.nvim_create_user_command(
     'DoTheThing',
     function()
