@@ -50,7 +50,7 @@ function M.close_float()
   if not M.open then
     return
   end
-  vim.api.nvim_buf_delete(M.buffer)
+  vim.api.nvim_win_close(1001)
   M.open = false
 end
 
