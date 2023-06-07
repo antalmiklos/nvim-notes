@@ -32,7 +32,7 @@ function M.open_float()
     vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
   end
 
-  vim.api.nvim_open_win(M.buffer, true, {
+  M.wid = vim.api.nvim_open_win(M.buffer, true, {
     relative='win',
     width=width,
     height=height,
@@ -50,7 +50,7 @@ function M.close_float()
   if not M.open then
     return
   end
-  vim.api.nvim_win_close(1001, false)
+  vim.api.nvim_win_close(M.wid, false)
   M.open = false
 end
 
