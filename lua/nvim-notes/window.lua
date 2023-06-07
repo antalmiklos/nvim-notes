@@ -29,6 +29,7 @@ function M.open_float()
 
   if M.buffer == nil then
     create_buf("notes")
+    vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
   end
 
   vim.api.nvim_open_win(M.buffer, true, {
@@ -46,10 +47,10 @@ function M.open_float()
 end
 
 function M.close_float()
-  if !M.open then
+  if not M.open then
     return
   end
-  vim.api.nvim_cmd(":q")
+  vim.api.nvim_buf_delete(M.buffer)
   M.open = false
 end
 
