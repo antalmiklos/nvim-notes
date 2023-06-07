@@ -8,6 +8,7 @@ local M = {}
 -- Routes calls made to this module to functions in the
 -- plugin's other modules.
 M.open_float = window.open_float
+
 vim.api.nvim_create_user_command(
     'DoTheThing',
     function()
@@ -16,4 +17,7 @@ vim.api.nvim_create_user_command(
     end,
     {bang = true, desc = 'a new command to do the thing'}
 )
+
+require("nvim-notes")
 return M
+

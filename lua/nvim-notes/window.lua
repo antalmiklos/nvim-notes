@@ -16,7 +16,7 @@ function M.open_float()
     create_buf("notes")
   end
   local width = 60;
-  local height = 60;
+  local height = 20;
   local zindex = 99;
   vim.api.nvim_open_win(M.buffer, true, {
     relative='win',
