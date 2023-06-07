@@ -20,7 +20,6 @@ vim.api.nvim_create_user_command(
     'DoTheThing',
     function()
         M.open_float()
-        print "Something should happen here..."
     end,
     {bang = true, desc = 'a new command to do the thing'}
 )
