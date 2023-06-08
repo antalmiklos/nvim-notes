@@ -21,6 +21,7 @@ local function create_buf(name)
   vim.api.nvim_buf_set_name(M.buffer, name)
   notes_cnt = notes.read_notes("quicknotes.md")
   vim.api.nvim_buf_set_lines(M.buffer,0,0,false, notes_cnt)
+  vim.filetype.filetype = "markdown"
 end
 
 function M.open_float()
