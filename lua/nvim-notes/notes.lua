@@ -1,7 +1,7 @@
 local M = {}
 
 local root_dir = vim.fn.getcwd()
-local notes_folder = ".notes/"
+local notes_folder = "/.notes/"
 
 -- local quick_notes_exist = vim.fn.filereadable(root_dir..".notes/quick.txt")
 
