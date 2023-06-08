@@ -36,7 +36,10 @@ end
 
 function M.save_note(filename, content)
   local f = assert(io.open(root_dir..notes_folder..filename, "w"))
-  if not f then return {} end
+  if not f then
+    create_dir()
+    M.create_missing_file(filename)
+  end
 
   io.output(f)
   for k, line in pairs(content) do
