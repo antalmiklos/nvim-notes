@@ -54,7 +54,7 @@ function M.close_float()
   if not M.open then
     return
   end
-  vim.api.nvim_win_close(M.wid, false)
+  vim.api.nvim_win_hide(M.wid, false)
   M.open = false
 end
 
