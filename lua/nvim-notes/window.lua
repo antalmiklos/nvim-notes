@@ -19,7 +19,8 @@ local function create_buf(name)
 end
 
 
-local function create_window()
+
+function M.open_float()
   local width = 60;
   local height = 20;
   local zindex = 2;
@@ -31,31 +32,22 @@ local function create_window()
     create_buf("notes")
     vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
   end
-  M.wid = vim.api.nvim_open_win(M.buffer, true, {
-    relative='win',
-    width=width,
-    height=height,
-    border="single",
-    win = 1001,
-    row = row,
-    col = col,
-    zindex=zindex,
-  })
-end
-
-function M.open_float()
-    if M.wid == 0 then
-        create_window()
-    end
+    M.wid = vim.api.nvim_open_win(M.buffer, true, {
+      relative='win',
+      width=width,
+      height=height,
+      border="single",
+      win = 1001,
+      row = row,
+      col = col,
+      zindex=zindex,
+    })
     M.open = true
 end
 
 function M.close_float()
   if not M.open then
     return
-  end
-  if M.wid == nil then
-   return
   end
   vim.api.nvim_win_close(M.wid, false)
   M.open = false
