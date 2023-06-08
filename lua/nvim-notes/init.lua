@@ -12,30 +12,12 @@ M.open_float = window.open_float
 M.close_float = window.close_float
 M.toggle_notes = window.toggle_notes
 
-print(window)
-
 function M.setup(opts)
   notes.create_missing_file("quicknotes.md")
   if opts == nil then
     return
   end
 end
-
-vim.api.nvim_create_user_command(
-    'DoTheThing',
-    function()
-        M.open_float()
-    end,
-    {bang = true, desc = 'a new command to do the thing'}
-)
-
-vim.api.nvim_create_user_command(
-    'CloseTheThing',
-    function()
-        M.close_float()
-    end,
-    {bang = true, desc = 'a new command to do the thing'}
-)
 
 return M
 

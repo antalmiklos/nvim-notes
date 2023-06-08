@@ -1,6 +1,8 @@
 -- Creates an object for the module.
 local M = {}
 
+local notes = require("nvim-notes.notes")
+
 M.open = false
 M.wid = 0
 
@@ -16,9 +18,9 @@ local function create_buf(name)
   end
   M.buffer = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_buf_set_name(M.buffer, name)
+  vim.api.nvim_buf_set_lines(M.buffer, notes.read_notes("quicknotes"))
+
 end
-
-
 
 function M.open_float()
   local width = 60;
