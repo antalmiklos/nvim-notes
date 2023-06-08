@@ -29,8 +29,8 @@ function M.read_notes(filename)
   if not f then
     return
   end
-  local cnt = f:lines(f)
-  for line in cnt do
+
+  for line in f:lines(f) do
     lines[#lines+1] = line
   end 
   f:close()
