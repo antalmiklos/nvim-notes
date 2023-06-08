@@ -50,6 +50,7 @@ function M.open_float()
       zindex=zindex,
     })
     M.open = true
+    vim.bg.filetype = "markdown"
 end
 
 function M.close_float()
