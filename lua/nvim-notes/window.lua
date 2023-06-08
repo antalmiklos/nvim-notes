@@ -32,18 +32,22 @@ function M.open_float()
     vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
   end
 
-  M.wid = vim.api.nvim_open_win(M.buffer, true, {
-    relative='win',
-    width=width,
-    height=height,
-    border="single",
-    win = 1001,
-    row = row,
-    col = col,
-    zindex=zindex,
-  })
+    if not M.open then
+      M.wid = vim.api.nvim_open_win(M.buffer, true, {
+        relative='win',
+        width=width,
+        height=height,
+        border="single",
+        win = 1001,
+        row = row,
+        col = col,
+        zindex=zindex,
+      })
 
   M.open = true
+        
+    end
+
 end
 
 function M.close_float()
