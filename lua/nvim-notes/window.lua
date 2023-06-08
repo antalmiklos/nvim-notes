@@ -18,7 +18,7 @@ local function create_buf(name)
 end
 
 
-local function create_window()
+local function create_window(M)
   local width = 60;
   local height = 20;
   local zindex = 2;
@@ -44,7 +44,7 @@ end
 
 function M.open_float()
     if M.wid == nil then
-        create_window()
+        create_window(M)
     end
     M.open = true
 end
