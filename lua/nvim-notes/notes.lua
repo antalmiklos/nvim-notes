@@ -7,7 +7,7 @@ local notes_folder = ".notes/"
 
 -- creates the missing file in the provided directory/path
 function M.create_missing_file(filename)
-  f = io.open(root_dir..notes_folder..filename, "a+")
+  local f = assert(io.open(root_dir..notes_folder..filename, "a+"))
   f:write("-- test")
   f:close()
 end
