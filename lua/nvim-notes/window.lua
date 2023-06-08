@@ -35,7 +35,6 @@ function M.open_float()
   if M.buffer == nil then
     create_buf("notes")
     vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
-    vim.bo.filetype = "markdown"
   end
   notes_cnt = notes.read_notes("quicknotes.md")
   vim.api.nvim_buf_set_lines(M.buffer,0,-1,false, notes_cnt)
@@ -50,7 +49,6 @@ function M.open_float()
       zindex=zindex,
     })
     M.open = true
-    vim.bg.filetype = "markdown"
 end
 
 function M.close_float()
@@ -68,6 +66,7 @@ function M.toggle_notes()
         return
     end
     M.open_float()
+    vim.bg.filetype = "markdown"
 end
 
 return M
