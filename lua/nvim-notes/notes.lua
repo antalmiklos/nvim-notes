@@ -24,13 +24,17 @@ function M.create_missing_file(filename)
 end
 
 function M.read_notes(filename)
+    local lines = {}
   local f = assert(io.open(root_dir..notes_folder..filename, "r"))
   if not f then
     return
   end
-  local cnt = f:lines()
+  local cnt = f:lines(f)
+  for line in cnt do
+    lines[#lines+1] = line
+  end 
   f:close()
-  return cnt
+  return lines
 end
 
 return M
