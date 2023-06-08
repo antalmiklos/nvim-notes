@@ -19,7 +19,7 @@ function M.create_missing_file(filename)
   if not f then
     return
   end
-  f:write("-- test")
+  f:write("")
   f:close()
 end
 
