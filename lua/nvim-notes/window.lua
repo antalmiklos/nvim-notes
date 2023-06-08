@@ -35,6 +35,8 @@ function M.open_float()
     create_buf("notes")
     vim.api.nvim_buf_set_option(M.buffer, 'modifiable', true)
   end
+  notes_cnt = notes.read_notes("quicknotes.md")
+  vim.api.nvim_buf_set_lines(M.buffer,0,0,false, notes_cnt)
     M.wid = vim.api.nvim_open_win(M.buffer, true, {
       relative='win',
       width=width,
