@@ -54,6 +54,9 @@ function M.close_float()
   if not M.open then
     return
   end
+  if M.wid == nil then
+   return
+  end
   vim.api.nvim_win_close(M.wid, false)
   M.open = false
 end
