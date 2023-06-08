@@ -39,7 +39,9 @@ function M.save_note(filename, content)
   if not f then return {} end
 
   io.output(f)
-  io.write(content)
+  for line in content do
+    io.write(line.."\n")
+  end
   io.close(f)
 end
 
