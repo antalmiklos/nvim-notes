@@ -60,6 +60,7 @@ end
 function M.toggle_notes()
     if M.open then
         M.close_float()
+        notes.save_note("quicknotes.md", vim.api.nvim_buf_get_text(M.buffer))
         return
     end
     M.open_float()

@@ -34,4 +34,14 @@ function M.read_notes(filename)
   return lines
 end
 
+function M.save_note(filename, content)
+  local f = assert(io.open(root_dir..notes_folder..filename, "a"))
+  if not f then return {} end
+
+  io.output(f)
+  io.write(content)
+  io.close(f)
+end
+
+
 return M
