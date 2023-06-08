@@ -66,7 +66,6 @@ function M.toggle_notes()
         return
     end
     M.open_float()
-    vim.bg.filetype = "markdown"
 end
 
 return M
