@@ -17,8 +17,11 @@ local function create_buf(name)
     name = "notes"
   end
   M.buffer = vim.api.nvim_create_buf(false, true)
+
   vim.api.nvim_buf_set_name(M.buffer, name)
-  vim.api.nvim_buf_set_lines(M.buffer,0,0,false, notes.read_notes("quicknotes.md"))
+  notes_cnt = notes.read_notes("quicknotes.md")
+  print(notes_cnt)
+  vim.api.nvim_buf_set_lines(M.buffer,0,0,false, notes_cnt)
 end
 
 function M.open_float()
