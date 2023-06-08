@@ -20,7 +20,6 @@ local function create_buf(name)
 
   vim.api.nvim_buf_set_name(M.buffer, name)
   notes_cnt = notes.read_notes("quicknotes.md")
-  print(notes_cnt)
   vim.api.nvim_buf_set_lines(M.buffer,0,0,false, notes_cnt)
 end
 
