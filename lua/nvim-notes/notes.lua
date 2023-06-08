@@ -11,7 +11,7 @@ function M.create_missing_file(filename)
   if f ~= nil then
     vim.api.nvim_err_writeln("can't open file: "..root_dir..filename)
   end
-  f:write("")
+  f = f:write("")
   f:close()
 end
 
