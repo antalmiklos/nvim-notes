@@ -1,5 +1,6 @@
 -- Imports the plugin's additional Lua modules.
 local window = require("nvim-notes.window")
+local notes = require("nvim-notes.notes")
 
 -- Creates an object for the module. All of the module's
 -- functions are associated with this object, which is
@@ -14,10 +15,10 @@ M.toggle_notes = window.toggle_notes
 print(window)
 
 function M.setup(opts)
+    notes.create_missing_file("quick")
   if opts == nil then
     return
   end
-  return
 end
 
 vim.api.nvim_create_user_command(
