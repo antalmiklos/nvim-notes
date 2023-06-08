@@ -26,7 +26,10 @@ end
 function M.read_notes(filename)
   local lines = {}
   local f = assert(io.open(root_dir..notes_folder..filename, "rb"))
-  if not f then return {} end
+  if not f then
+    create_dir()
+    M.create_missing_file(filename)
+  end
 
   for line in io.lines(root_dir..notes_folder..filename) do
     lines[#lines+1] = line
