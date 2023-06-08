@@ -7,11 +7,12 @@ local notes_folder = ".notes/"
 
 -- creates the missing file in the provided directory/path
 function M.create_missing_file(filename)
-  local f = io.open(root_dir..notes_folder..filename, "w")
+  local f = io.open(root_dir..notes_folder..filename, "a+")
   if f ~= nil then
     vim.api.nvim_err_writeln("can't open file: "..root_dir..filename)
+    return
   end
-  f = f:write("")
+  f:write("-- test")
   f:close()
 end
 
