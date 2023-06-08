@@ -55,11 +55,11 @@ function M.close_float()
 end
 
 function M.toggle_notes()
-    if not M.open then
-        M.open_float()
+    if M.open then
+        M.close_float()
         return
     end
-    M.close_float()
+    M.open_float()
 end
 
 return M
