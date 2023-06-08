@@ -1,4 +1,3 @@
-echo "nvim-example-lua-plugin.vim: VimL code executing."
 
 " Title:        Example Plugin
 " Description:  A plugin to provide an example for creating Neovim plugins.
