@@ -15,7 +15,7 @@ function M.create_missing_file(filename)
   if not isdir then
      create_dir()
   end
-  local f = assert(io.open(root_dir..notes_folder..filename, "a+"))
+  local f = io.open(root_dir..notes_folder..filename, "a+")
   if not f then
     return
   end
@@ -25,7 +25,7 @@ end
 
 function M.read_notes(filename)
   local lines = {}
-  local f = assert(io.open(root_dir..notes_folder..filename, "rb"))
+  local f = io.open(root_dir..notes_folder..filename, "rb")
   if not f then
     create_dir()
     M.create_missing_file(filename)
@@ -38,7 +38,7 @@ function M.read_notes(filename)
 end
 
 function M.save_note(filename, content)
-  local f = assert(io.open(root_dir..notes_folder..filename, "w"))
+  local f = io.open(root_dir..notes_folder..filename, "w")
   if not f then
     create_dir()
     M.create_missing_file(filename)
