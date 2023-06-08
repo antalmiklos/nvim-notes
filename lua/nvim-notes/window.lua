@@ -2,6 +2,7 @@
 local M = {}
 
 M.open = false
+M.wid = 0
 
 local function get_win_dimensions()
   local width = vim.api.nvim_win_get_width(0)
@@ -18,7 +19,7 @@ local function create_buf(name)
 end
 
 
-local function create_window(M)
+local function create_window()
   local width = 60;
   local height = 20;
   local zindex = 2;
@@ -43,8 +44,8 @@ local function create_window(M)
 end
 
 function M.open_float()
-    if M.wid == nil then
-        create_window(M)
+    if M.wid == 0 then
+        create_window()
     end
     M.open = true
 end
