@@ -11,7 +11,7 @@ M.open_float = window.open_float
 M.close_float = window.close_float
 M.toggle_notes = window.toggle_notes
 
-print(M.window.open)
+print(window.open)
 
 function M.setup(opts)
   if opts == nil then
