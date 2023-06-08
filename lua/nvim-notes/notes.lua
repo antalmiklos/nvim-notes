@@ -28,7 +28,7 @@ function M.read_notes(filename)
   if not f then
     return
   end
-  local cnt = f:read("")
+  local cnt = f:read()
   f:close()
   return cnt
 end
