@@ -40,7 +40,8 @@ function M.save_note(filename, content)
 
   io.output(f)
   for k, line in content do
-    io.write(line.."\n")
+    print(k, line)
+    -- io.write(line.."\n")
   end
   io.close(f)
 end
