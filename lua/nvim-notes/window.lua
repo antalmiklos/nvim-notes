@@ -43,11 +43,7 @@ function M.open_float()
         col = col,
         zindex=zindex,
       })
-
-  M.open = true
-        
     end
-
 end
 
 function M.close_float()
@@ -56,6 +52,14 @@ function M.close_float()
   end
   vim.api.nvim_win_close(M.wid, false)
   M.open = false
+end
+
+function M.toggle_notes()
+    if not M.open then
+        M.open_float()
+        return
+    end
+    M.close_float()
 end
 
 return M
