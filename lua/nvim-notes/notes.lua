@@ -30,7 +30,7 @@ function M.read_notes(filename)
     return
   end
 
-  for line in f:lines(f) do
+  for line in f:lines(root_dir..notes_folder..filename) do
     lines[#lines+1] = line
   end 
   f:close()
