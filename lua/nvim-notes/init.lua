@@ -15,12 +15,17 @@ M.toggle_notes = window.toggle_notes
 print(window)
 
 function M.setup(opts)
-    notes.create_missing_file("quick")
   if opts == nil then
     return
   end
 end
-
+vim.api.nvim_create_user_command(
+    'CreateTheThing',
+    function()
+        notes.create_missing_file("notes")
+    end,
+    {bang = true, desc = 'a new command to do the thing'}
+)
 vim.api.nvim_create_user_command(
     'DoTheThing',
     function()
